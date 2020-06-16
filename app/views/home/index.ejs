@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-light justify-content-between">
+      <a class="navbar-brand">Weather Forcast</a>
+    </nav>
+
+    <br>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-4">
+          <form action="/" method="post">
+            <div class="form-inline">
+              <div class="col-7">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="city" id="city">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              </div>
+            </div>
+          </form>
+          
+          <br>
+
+          <div class="card flex-md-row mb-4 box-shadow h-md-250">
+            <div class="card-body d-flex flex-column align-items-start">
+              <h3 class="mb-0">
+                <a class="text-dark" href="#"><%=data.name%>, <%=data.sys.country%></a>
+                <img src="<%=icon%>" alt="" style="width: 100px; height: 100px;">
+              </h3>
+              <!-- <div class="mb-1 text-muted">date_now</div> -->
+              <h5 class="card-text mb-auto">Temp: <%=data.main.temp%> k</h5>
+              <h5 class="card-text mb-auto">Humidity: <%=data.main.humidity%>% </h5>
+              <h5 class="card-text mb-auto">Weather: <%=data.weather[0].main%></h5>                         
+            </div>
+          </div>
+
+        </div>
+        <div class="col-sm-8">
+          <div class="table-responsive">
+            <table class="table">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Cidade</th>
+                  <th scope="col">Clima</th>
+                  <th scope="col">Temperatura</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Cambui, Minas Gerais, Brazil</td>
+                  <td>Céu aberto</td>
+                  <td>35º</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Cambui, Minas Gerais, Brazil</td>
+                  <td>Céu aberto</td>
+                  <td>35º</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>Cambui, Minas Gerais, Brazil</td>
+                  <td>Céu aberto</td>
+                  <td>35º</td>
+                </tr>
+                <tr>
+                  <th scope="row">4</th>
+                  <td>Cambui, Minas Gerais, Brazil</td>
+                  <td>Céu aberto</td>
+                  <td>35º</td>
+                </tr>
+                <tr>
+                  <th scope="row">5</th>
+                  <td>Cambui, Minas Gerais, Brazil</td>
+                  <td>Céu aberto</td>
+                  <td>35º</td>
+                </tr>
+              </tbody>
+            </table>
+            
+            <table class="table">
+              <thead class="thead-light">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Cidade</th>
+                  <th scope="col">Clima</th>
+                  <th scope="col">Temperatura</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Cambui, Minas Gerais, Brazil</td>
+                  <td>Céu aberto</td>
+                  <td>35º</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Cambui, Minas Gerais, Brazil</td>
+                  <td>Céu aberto</td>
+                  <td>35º</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>Cambui, Minas Gerais, Brazil</td>
+                  <td>Céu aberto</td>
+                  <td>35º</td>
+                </tr>
+                <tr>
+                  <th scope="row">4</th>
+                  <td>Cambui, Minas Gerais, Brazil</td>
+                  <td>Céu aberto</td>
+                  <td>35º</td>
+                </tr>
+                <tr>
+                  <th scope="row">5</th>
+                  <td>Cambui, Minas Gerais, Brazil</td>
+                  <td>Céu aberto</td>
+                  <td>35º</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
