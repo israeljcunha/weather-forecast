@@ -14,6 +14,7 @@ app.use(express_validator());
 
 consign()
 	.include('app/routes')
+	.then('settings/connDB.js')
 	.then('app/models')
 	.then('app/controllers')
 	.then('app/apis')

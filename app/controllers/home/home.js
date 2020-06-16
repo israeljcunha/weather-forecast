@@ -7,8 +7,6 @@ module.exports.index = function(application, request, response) {
         iconcode = api_data['weather'][0]['icon'];
         var icon_url = "http://openweathermap.org/img/w/" + iconcode + ".png";
 
-        // console.log(api_data);
-    
         context = {
             // date_now: datetime,
             data: api_data,

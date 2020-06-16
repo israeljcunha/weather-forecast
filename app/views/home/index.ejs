@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Weather Forcast</title>
   </head>
   <body>
     <nav class="navbar navbar-light bg-light justify-content-between">
@@ -35,12 +35,13 @@
             <div class="card-body d-flex flex-column align-items-start">
               <h3 class="mb-0">
                 <a class="text-dark" href="#"><%=data.name%>, <%=data.sys.country%></a>
-                <img src="<%=icon%>" alt="" style="width: 100px; height: 100px;">
+                <img src="<%=icon%>" alt="" style="width: 120px; height: 120px;">
               </h3>
               <!-- <div class="mb-1 text-muted">date_now</div> -->
-              <h5 class="card-text mb-auto">Temp: <%=data.main.temp%> k</h5>
-              <h5 class="card-text mb-auto">Humidity: <%=data.main.humidity%>% </h5>
-              <h5 class="card-text mb-auto">Weather: <%=data.weather[0].main%></h5>                         
+              <h5 class="card-text mb-auto">Temperatura: <%=Math.round(data.main.temp)%> °C</h5>
+              <h5 class="card-text mb-auto">Umidade: <%=data.main.humidity%>% </h5>
+              <h5 class="card-text mb-auto">Clima: <%=data.weather[0].description %></h5>      
+                  
             </div>
           </div>
 
