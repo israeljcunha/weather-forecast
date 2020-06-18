@@ -5,7 +5,8 @@ module.exports.index_post = function(application, request, response) {
     if (request.body['city'] != '') {
 
         try {
-            var data = application.app.apis.getweather.weather_by_city(application, request.body['city']);
+            var city = request.body['city'].normalize('NFD').replace(/[\u0300-\u036f]/g, "");
+            var data = application.app.apis.getweather.weather_by_city(application, city);
 
             if (typeof data === 'string' || data instanceof String) {
                 response.render("home/index", {
