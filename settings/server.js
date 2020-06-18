@@ -7,8 +7,8 @@ var app = express();
 
 app.set('view engine', 'ejs');
 app.set('views', './app/views');
-
 app.use(express.static('./app/static'))
+
 app.use(body_parser.urlencoded({extended: true}));
 app.use(express_validator());
 

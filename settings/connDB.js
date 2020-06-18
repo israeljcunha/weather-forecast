@@ -1,51 +1,20 @@
-var mongoDB = require('mongoose');
+var mongo = require('mongodb');
 
-const url_db = 'mongodb+srv://test_work:sPXbULf5cEBhppFB@clusterapi-idck3.mongodb.net/ClusterAPI?retryWrites=true&w=majority';
+var connMongoDB = function(){
+    console.log('+ [nodemon] Conexao Mongo DB');
+	var db = new mongo.Db(
+		'weatherforecast',
+		new mongo.Server(
+			'localhost', 
+			27017,
+			{}
+		),
+		{}
+	);
 
-const options_conect = {
-    poolSize: 5,
-    useUnifiedTopology: true
-};
-
-try {
-    var client = mongoDB.connect(
-        url_db, 
-        options_conect
-    );
-
-    var db = client.connection;
-
-    db.on(
-        'error', 
-        console.error.bind(
-            console, 
-            'MongoDB connection error:'
-        )
-    );
-
-
-} catch (error) {
-    console.log('- - - - - - DataBase Connection Error - - - - - - ');
-    console.log(error);
-    console.log('- - - - - - DataBase Connection Error - - - - - - ');
+	return db;
 }
 
-// module.exports.mongoose = mongoDB  
-
-// module.exports = function(){
-//     var db = mongoDB.MongoClient(
-//         'weatherforecast',
-//         new mongoDB.Server(
-//             '127.0.0.1',
-//             27017,
-//             {}
-//         ),
-//         {}
-//     );
-
-//     return db;
-// }
-
-// key: sPXbULf5cEBhppFB
-// user: test_work
-// mongodb+srv://test_work:sPXbULf5cEBhppFB@clusterapi-idck3.mongodb.net/ClusterAPI?retryWrites=true&w=majority
+module.exports = function(){
+	return connMongoDB;
+}
