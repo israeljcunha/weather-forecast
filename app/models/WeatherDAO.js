@@ -12,14 +12,13 @@ WeatherDAO.prototype.insertCity = function(city){
 	});
 }
 
-WeatherDAO.prototype.getCity = function(request){
-    this._connection.open(function(err, mongoclient){
+WeatherDAO.prototype.getCity = async function(city){
+    this._connection.open(await function(err, mongoclient){
         mongoclient.collection("city", function(err, collection){
-            collection.find().toArray(function(err, result){
+            collection.find({city: city}).toArray(function(err, result){
                 return result;
             });
             mongoclient.close();
-
         });
     });
 }

@@ -5,7 +5,7 @@ var connMongoDB = function(){
 	var db = new mongo.Db(
 		'weatherforecast',
 		new mongo.Server(
-			'localhost', 
+			'localhost',
 			27017,
 			{}
 		),

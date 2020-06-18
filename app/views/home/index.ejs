@@ -7,28 +7,40 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
     <title>Weather Forcast</title>
   </head>
   <body>
     <nav class="navbar navbar-light bg-light justify-content-between">
       <a class="navbar-brand">Weather Forcast</a>
     </nav>
-
     <br>
-
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-4">
+          
+          <% if (erro.msg != '') { %>
+            <div class="alert alert-danger" role="alert">
+                <%=erro.msg%>
+            </div>
+          <% } %>
+          
           <form action="/" method="post">
-            <div class="form-inline">
-              <div class="col-7">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="city" id="city">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <div class="row">
+              <div class="col-sm-10">
+                <input class="form-control" type="search" placeholder="Pesquisa por cidade" aria-label="Search" name="city" id="city">
+              </div>
+              <div class="col-sm-2">  
+                <button class="btn btn-outline-success" type="submit">
+                  <svg class="bi bi-search" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
+                    <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+                  </svg>
+                  Search
+                </button>
               </div>
             </div>
           </form>
-          
+
           <br>
           <% if(data.length > 0 ) { %>
             <div class="card flex-md-row mb-4 box-shadow h-md-250">
@@ -37,7 +49,7 @@
                   <a class="text-dark" href="#"><%=data[0].city%>, <%=data[0].country%></a>
                   <img src="<%=data[0].icon%>" alt="" style="width: 120px; height: 120px;">
                 </h3>
-                <!-- <div class="mb-1 text-muted">date_now</div> -->
+
                 <h5 class="card-text mb-auto">Temperatura: <%=data[0].temp%></h5>
                 <h5 class="card-text mb-auto">Umidade: <%=data[0].humidity%> </h5>
                 <h5 class="card-text mb-auto">Clima: <%=data[0].description %></h5>      
@@ -47,102 +59,93 @@
           <% } %>
         </div>
         <div class="col-sm-8">
-          <div class="table-responsive">
-            <table class="table">
-              <thead class="thead-dark">
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Cidade</th>
-                  <th scope="col">Clima</th>
-                  <th scope="col">Temperatura</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Cambui, Minas Gerais, Brazil</td>
-                  <td>Céu aberto</td>
-                  <td>35º</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Cambui, Minas Gerais, Brazil</td>
-                  <td>Céu aberto</td>
-                  <td>35º</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Cambui, Minas Gerais, Brazil</td>
-                  <td>Céu aberto</td>
-                  <td>35º</td>
-                </tr>
-                <tr>
-                  <th scope="row">4</th>
-                  <td>Cambui, Minas Gerais, Brazil</td>
-                  <td>Céu aberto</td>
-                  <td>35º</td>
-                </tr>
-                <tr>
-                  <th scope="row">5</th>
-                  <td>Cambui, Minas Gerais, Brazil</td>
-                  <td>Céu aberto</td>
-                  <td>35º</td>
-                </tr>
-              </tbody>
-            </table>
-            
-            <table class="table">
-              <thead class="thead-light">
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Cidade</th>
-                  <th scope="col">Clima</th>
-                  <th scope="col">Temperatura</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Cambui, Minas Gerais, Brazil</td>
-                  <td>Céu aberto</td>
-                  <td>35º</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Cambui, Minas Gerais, Brazil</td>
-                  <td>Céu aberto</td>
-                  <td>35º</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Cambui, Minas Gerais, Brazil</td>
-                  <td>Céu aberto</td>
-                  <td>35º</td>
-                </tr>
-                <tr>
-                  <th scope="row">4</th>
-                  <td>Cambui, Minas Gerais, Brazil</td>
-                  <td>Céu aberto</td>
-                  <td>35º</td>
-                </tr>
-                <tr>
-                  <th scope="row">5</th>
-                  <td>Cambui, Minas Gerais, Brazil</td>
-                  <td>Céu aberto</td>
-                  <td>35º</td>
-                </tr>
-              </tbody>
-            </table>
+          <div class="table">
+            <div class="row">
+
+              <div class="col-sm-6">
+                <table class="table">
+                  <thead class="thead-dark">
+                    <tr>
+                      <th scope="col">Cidades mais buscadas</th>
+                    </tr>
+                  </thead>
+                  <tbody id="lager">
+                     
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="col-sm-6">
+                <table class="table">
+                  <thead class="thead-dark">
+                    <tr>
+                      <th scope="col">Últimas buscas</th>
+                    </tr>
+                  </thead>
+                  <tbody id="smaller">
+                      
+                  </tbody>
+                </table>
+              </div>
+
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script>
+
+        function DataTablesAPI(){
+          axios.get('http://127.0.0.1:3000/api/datatables/top_five', {})
+          .then(response => {
+            for (i=0; i < response.data.length; i++) {
+                var html = '';
+                html += '<tr class="inline_table_lager">';
+                  html += '<td> '+ response.data[i].key +' </td>';
+                html += '</tr>';
+
+                $('#lager').append(html);
+            }
+          })
+          .catch(error => {
+              console.log(error);
+          })
+
+          axios.get('http://127.0.0.1:3000/api/datatables/lasted', {})
+          .then(response => {
+
+            for (i=0; i < response.data.length; i++) {     
+                var html = '';           
+                html += '<tr class="inline_table_smaller">';
+                  html += '<td> '+ response.data[i].city +' </td>';
+                html += '</tr>';
+
+                $('#smaller').append(html);
+            }
+          })
+          .catch(error => {
+              console.log(error);
+          })
+        }
+
+        function getDataTables() {
+            var data = setInterval(function(){
+              $("[class='inline_table_smaller']").remove();
+              $("[class='inline_table_lager']").remove();
+
+              return DataTablesAPI();
+            }, 10000);
+        }
+
+        DataTablesAPI();
+        getDataTables();
+        
+    </script>
   </body>
 </html>
