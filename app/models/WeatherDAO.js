@@ -12,7 +12,7 @@ WeatherDAO.prototype.insertCity = function(city){
 	});
 }
 
-WeatherDAO.prototype.getCity = function(){
+WeatherDAO.prototype.getCity = function(request){
     this._connection.open(function(err, mongoclient){
         mongoclient.collection("city", function(err, collection){
             collection.find().toArray(function(err, result){
