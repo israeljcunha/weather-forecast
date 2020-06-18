@@ -12,9 +12,11 @@ Para que o proejto seja inicializado corretamento, siga os passo a passo abaixo:
 
 ## Desmonstração do Sistema
 
+![Tela de Busca](./docs/img/buscas.png)
+
 ![Tela Principal](./docs/img/principal.png)
 
-![Tela de Busca](./docs/img/buscas.png)
+
 
 
 
